@@ -1,0 +1,287 @@
+<<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DENK-MD PAIR CODE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #8A2BE2;
+      --secondary: #4B0082;
+      --accent: #FF8C00;
+      --dark: #0A0417;
+      --light: #F8F8FF;
+      --glass: rgba(255, 255, 255, 0.15);
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, var(--dark), #1A0635);
+      font-family: 'Poppins', sans-serif;
+      color: var(--light);
+      position: relative;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: 
+        radial-gradient(circle at 70% 30%, rgba(138, 43, 226, 0.15) 0%, transparent 30%),
+        radial-gradient(circle at 30% 70%, rgba(75, 0, 130, 0.15) 0%, transparent 30%);
+      animation: rotate 20s linear infinite;
+      z-index: -1;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 400px;
+      backdrop-filter: blur(12px);
+      background: var(--glass);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(45deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .input-container {
+      display: flex;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .input-container input {
+      flex: 1;
+      padding: 1rem;
+      border: none;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      font-size: 0.9rem;
+    }
+
+    .input-container input:focus {
+      outline: none;
+      background: white;
+    }
+
+    .input-container button {
+      padding: 1rem 1.5rem;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      color: white;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .input-container button:hover {
+      background: linear-gradient(45deg, var(--accent), var(--primary));
+    }
+
+    #pair {
+      min-height: 60px;
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .copy-btn {
+      background: linear-gradient(45deg, #FF416C, #FF4B2B);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 0.5rem;
+    }
+
+    .copy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+    }
+
+    .footer {
+      margin-top: 1.5rem;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.8rem;
+    }
+
+    .glowing-text {
+      font-size: 1rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, #FF8C00, #FFD700, #32CD32, #1E90FF, #8A2BE2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: glow 8s linear infinite;
+      background-size: 400% 100%;
+    }
+
+    @keyframes glow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        padding: 1.5rem;
+        width: 85%;
+      }
+      
+      .logo {
+        font-size: 1.8rem;
+      }
+      
+      .input-container {
+        flex-direction: column;
+      }
+      
+      .input-container button {
+        padding: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">DENKI-MD</div>
+    <div class="subtitle">Générateur de Pair Code</div>
+    
+    <div class="input-container">
+      <input type="text" id="number" placeholder="Entrez votre numéro avec l'indicatif" pattern="[0-9]+">
+      <button id="submit"><i class="fas fa-paper-plane"></i></button>
+    </div>
+    
+    <div id="pair"></div>
+    
+    <div class="footer">
+      <div class="glowing-text">POWERED BY 𝑫𝑬𝑵𝑲𝑰 ᴰᴱᵛ</div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+  <script>
+    const pairElement = document.getElementById("pair");
+    const submitBtn = document.getElementById("submit");
+    const numberInput = document.getElementById("number");
+
+    async function copyToClipboard() {
+      const codeElement = document.getElementById("code");
+      if (!codeElement) return;
+      
+      try {
+        await navigator.clipboard.writeText(codeElement.innerText.replace('CODE: ', ''));
+        codeElement.innerText = "COPIÉ!";
+        codeElement.style.color = "#4CAF50";
+        
+        setTimeout(() => {
+          codeElement.innerText = `CODE: ${codeElement.dataset.code}`;
+          codeElement.style.color = "white";
+        }, 2000);
+      } catch (err) {
+        console.error('Erreur de copie:', err);
+      }
+    }
+
+    submitBtn.addEventListener("click", async (e) => {
+      e.preventDefault();
+      
+      if (!numberInput.value) {
+        pairElement.innerHTML = '<div style="color: #FF5252;">❗ Entrez votre numéro WhatsApp avec l\'indicatif pays</div>';
+        return;
+      }
+      
+      const cleanNumber = numberInput.value.replace(/[^0-9]/g, "");
+      
+      if (cleanNumber.length < 8) {
+        pairElement.innerHTML = '<div style="color: #FF5252;">❌ Format de numéro invalide</div>';
+        return;
+      }
+      
+      // Format the number for display
+      let formattedNumber = "+";
+      for (let i = 0; i < cleanNumber.length; i++) {
+        if (i === 3 || i === 6) formattedNumber += " ";
+        formattedNumber += cleanNumber[i];
+      }
+      
+      numberInput.value = formattedNumber;
+      pairElement.innerHTML = '<div style="color: white;"><i class="fas fa-spinner fa-spin"></i> Génération en cours...</div>';
+      
+      try {
+        const { data } = await axios.get(`/code?number=${cleanNumber}`);
+        const code = data.code || "Service indisponible";
+        
+        pairElement.innerHTML = `
+          <div style="color: white; font-size: 1.2rem; margin-bottom: 0.5rem;">
+            Votre code d'appairage:
+          </div>
+          <div id="code" data-code="${code}" style="
+            background: rgba(255,255,255,0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 1rem;
+          " onclick="copyToClipboard()">
+            CODE: ${code}
+          </div>
+          <button class="copy-btn" onclick="copyToClipboard()">
+            <i class="far fa-copy"></i> Copier le code
+          </button>
+        `;
+      } catch (error) {
+        pairElement.innerHTML = '<div style="color: #FF5252;">❌ Erreur de connexion au serveur</div>';
+        console.error('Error:', error);
+      }
+    });
+
+    // Allow pressing Enter key to submit
+    numberInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        submitBtn.click();
+      }
+    });
+  </script>
+</body>
+</html>
