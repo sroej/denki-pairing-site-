@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DENKI-MD</title>
+  <link rel="shortcut icon" href="" type="image/x-icon">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+    
+    :root {
+      --primary: #8A2BE2;  /* Violet royal */
+      --secondary: #4B0082; /* Indigo profond */
+      --accent: #FF8C00;   /* Orange vif */
+      --dark: #0A0417;     /* Fond sombre */
+      --light: #F8F8FF;    /* Blanc fantôme */
+      --glass: rgba(255, 255, 255, 0.1);
+    }
+    
+    body {
+      background: linear-gradient(135deg, var(--dark), #1A0635);
+      font-family: 'Poppins', sans-serif;
+      color: var(--light);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: 
+        radial-gradient(circle at 70% 30%, rgba(138, 43, 226, 0.15) 0%, transparent 30%),
+        radial-gradient(circle at 30% 70%, rgba(75, 0, 130, 0.15) 0%, transparent 30%);
+      animation: rotate 20s linear infinite;
+      z-index: -1;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 500px;
+      backdrop-filter: blur(12px);
+      background: var(--glass);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 2.5rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      background: linear-gradient(45deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+    }
+
+    .tagline {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .btn-grid {
+      display: grid;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      position: relative;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      z-index: 1;
+      border: none;
+      box-shadow: 0 5px 15px rgba(75, 0, 130, 0.4);
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, var(--accent), var(--primary));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(138, 43, 226, 0.6);
+    }
+
+    .btn:hover::before {
+      opacity: 1;
+    }
+
+    .error-note {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.85rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+    }
+
+    .error-btn {
+      background: linear-gradient(45deg, #FF416C, #FF4B2B);
+      box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+    }
+
+    .error-btn:hover {
+      box-shadow: 0 8px 25px rgba(255, 75, 43, 0.6);
+    }
+
+    footer {
+      margin-top: 2rem;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.8rem;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.8rem;
+        width: 85%;
+      }
+      
+      .logo {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="logo">DENKI-MD</h1>
+    <p class="tagline"></p>
+    
+    <div class="btn-grid">
+      <a href="/qr" class="btn">
+        <span>𝚀𝚁 𝙲𝙾𝙳𝙴</span>
+      </a>
+      
+      <a href="/pair" class="btn">
+        <span>𝙿𝙰𝙸𝚁 𝙲𝙾𝙳𝙴 </span>
+      </a>
+      
+      <a href="https://github.com/denki-arch/DENKI-MD/fork" class="btn">
+        <span>𝙵𝙾𝚁𝙺 𝚁𝙴𝙿𝙾</span>
+      </a>
+      
+      <a href="https://whatsapp.com/channel/0029VbB06qE9sBIFlu00Dq0R" class="btn">
+        <span>𝙼𝚈 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝙲𝙷𝙰𝙽𝙽𝙴𝙻</span>
+      </a>
+    </div>
+    
+    <p>𝙸𝙵 𝚈𝙾𝚄 𝙷𝙰𝚅𝙴 𝙰𝙽𝚈 𝙿𝚁𝙾𝙱𝙻𝙴𝙼𝚂
+     𝙲𝙻𝙸𝙲𝙺 𝚃𝙷𝙴 𝙾𝚆𝙽𝙴𝚁 𝙱𝚄𝚃𝚃𝙾𝙽 𝚃𝙾 
+     𝙲𝙾𝙽𝚃𝙰𝙲𝚃 𝙼𝙴 </p>
+    
+    <a href="https://wa.me/2250143875869" class="btn owner-btn">
+      <span>𝙾𝚆𝙽𝙴𝚁</span>
+    </a>
+    
+    <footer>
+      DENKI MD &copy; <span id="year"></span> | Tous droits réservés
+    </footer>
+  </div>
+  
+  <script>
+    // Année dynamique
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Effet de flottement aléatoire
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(btn => {
+      btn.style.animation = `float ${3 + Math.random() * 2}s ease-in-out infinite`;
+      btn.style.animationDelay = `${Math.random() * 2}s`;
+    });
+  </script>
+</body>
+</html>
