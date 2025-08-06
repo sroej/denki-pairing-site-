@@ -83,11 +83,10 @@ var randomItem = selectRandomItem(items);
 ╔═════『 𝗩𝗜𝗦𝗜𝗧 𝗙𝗢𝗥 𝗛𝗘𝗟𝗣 』══════❒
 ║❒ 𝗢𝗪𝗡𝗘𝗥 : https://wa.me/2250143875869
 ║❒ 𝗥𝗘𝗣𝗢 : https://github.com/denki-arch/DENKI-MD
+║❒𝗚𝗥𝗢𝗨𝗣 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 :https://chat.whatsapp.com/G6NnBdm9ZnvBCqy0OHi4It?mode=ac_t
 ║❒ 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠 𝗖𝗛𝗔𝗡𝗡𝗘𝗟 :
-║https://t.me/denkitech_hub 
-║
-║❒ 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 𝗖𝗛𝗔𝗡𝗡𝗘𝗟 :
- https://whatsapp.com/channel/0029VbB06qE9sBIFlu00Dq0R 
+║https://t.me/denkitech_hub
+║❒ 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 𝗖𝗛𝗔𝗡𝗡𝗘𝗟 : https://whatsapp.com/channel/0029VbB06qE9sBIFlu00Dq0R 
 ║𝗧𝗛𝗔𝗡𝗞𝗦 𝗧𝗢 : 
 ║DYBYTECH
 ║ZEPHYR
