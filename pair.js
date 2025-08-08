@@ -98,7 +98,7 @@ text: desc,
 contextInfo: {
 externalAdReply: {
 title: "denki",
-thumbnailUrl: "https://files.catbox.moe/hi0cm6.jpeg,
+thumbnailUrl: "https://files.catbox.moe/hi0cm6.jpeg",
 sourceUrl: "https://whatsapp.com/channel/0029VbB06qE9sBIFlu00Dq0R",
 mediaType: 1,
 renderLargerThumbnail: true
